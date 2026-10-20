@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Fact table for e-commerce orders"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: mart_customer_summary
+    description: "Customer summary mart"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_category_sales
+    description: "Category sales mart"
+    columns:
+      - name: category
+        tests:
+          - unique
+          - not_null
